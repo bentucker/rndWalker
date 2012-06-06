@@ -29,15 +29,15 @@ using rndWalker.Bots;
 
 namespace rndWalker.Classes {
     public static class Monk {
-        public static Spell mantraOfHealing = new Spell(SNOPowerId.Monk_MantraOfHealing,  50, 0);
-        public static Spell mantraOfEvasion = new Spell(SNOPowerId.Monk_MantraOfEvasion,  50, 0); 
-        public static Spell mantraOfConviction = new Spell(SNOPowerId.Monk_MantraOfConviction,  50, 0);
+        public static Spell mantraOfHealing = new Spell(SNOPowerId.Monk_MantraOfHealing, 0, 0, 50, 0);
+        public static Spell mantraOfEvasion = new Spell(SNOPowerId.Monk_MantraOfEvasion, 0, 0, 50, 0); 
+        public static Spell mantraOfConviction = new Spell(SNOPowerId.Monk_MantraOfConviction, 0, 0, 50, 0);
 
-        public static Spell blindingFlash = new Spell(SNOPowerId.Monk_BlindingFlash,  10, 0);
-        public static Spell breathOfHeaven = new Spell(SNOPowerId.Monk_BreathOfHeaven,  25, 0);
-        public static Spell serenity = new Spell(SNOPowerId.Monk_Serenity,  10, 0);
-        public static Spell sevenSidedStrike = new Spell(SNOPowerId.Monk_SevenSidedStrike,  50, 0);
-        public static Spell wayOfTheHundredFists = new Spell(SNOPowerId.Monk_WayOfTheHundredFists,  0, 0);
+        public static Spell blindingFlash = new Spell(SNOPowerId.Monk_BlindingFlash, 0, 0, 10, 0);
+        public static Spell breathOfHeaven = new Spell(SNOPowerId.Monk_BreathOfHeaven, 0, 0, 25, 0);
+        public static Spell serenity = new Spell(SNOPowerId.Monk_Serenity, 0, 0, 10, 0);
+        public static Spell sevenSidedStrike = new Spell(SNOPowerId.Monk_SevenSidedStrike, 0, 0, 50, 0);
+        public static Spell wayOfTheHundredFists = new Spell(SNOPowerId.Monk_WayOfTheHundredFists, 0, 0, 0, 0);
         //public static Spell potion = new Spell(SNOPowerId.Axe_Operate_Gizmo, 30, 0, 0, true);
 
         public static void drinkPot() {

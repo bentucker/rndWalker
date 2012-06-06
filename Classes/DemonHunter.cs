@@ -28,10 +28,10 @@ using D3;
 
 namespace rndWalker.Classes {
     public static class DemonHunter {
-        public static Spell hungeringArrow = new Spell(SNOPowerId.DemonHunter_HungeringArrow, 0, 0);
-        public static Spell impale = new Spell(SNOPowerId.DemonHunter_Impale, 10, 0);
+        public static Spell hungeringArrow = new Spell(SNOPowerId.DemonHunter_HungeringArrow, 0, 0, 0, 0);
+        public static Spell impale = new Spell(SNOPowerId.DemonHunter_Impale, 0, 0, 10, 0);
 
-        public static Spell potion = new Spell(SNOPowerId.Axe_Operate_Gizmo, 0, 0);
+        public static Spell potion = new Spell(SNOPowerId.Axe_Operate_Gizmo, 0, 0, 0, 0);
 
 
         public static bool AttackUnit(Unit _unit, TimeSpan _timeout) {

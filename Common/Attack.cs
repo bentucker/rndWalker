@@ -32,6 +32,14 @@ namespace rndWalker.Common
 
         public delegate bool UnitCheckCallback(Unit unit);
 
+        public static Unit GetClosest() {
+            return Unit.Get().Where(u => u != default(Unit) && u.Type == UnitType.Monster).OrderBy(u => Math.Pow(Me.X - u.X, 2) + Math.Pow(Me.Y - u.Y, 2)).FirstOrDefault();
+        }
+
+        public static Unit GetClosest(string npc) {
+            return Unit.Get().Where(u => u != default(Unit) && u.Name != null && u.Name.Contains(npc)).OrderBy(u => Math.Pow(Me.X - u.X, 2) + Math.Pow(Me.Y - u.Y, 2)).FirstOrDefault();
+        }
+
         static public bool AttackUnit(Unit unit, TimeSpan timeout)
         {
             if (unit.Type == UnitType.Monster

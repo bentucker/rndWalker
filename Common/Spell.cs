@@ -28,11 +28,15 @@ using D3;
 namespace rndWalker.Common {
     public class Spell {
         protected SNOPowerId id;
+        protected int duration = 0;
+        protected int cooldown = 0;
         protected int primCost = 0;
         protected int secCost = 0;
 
-        public Spell(SNOPowerId _id,int _cost1, int _cost2) {
+        public Spell(SNOPowerId _id, int _duration, int _cooldown, int _cost1, int _cost2) {
             id = _id;
+            duration = _duration;
+            cooldown = _cooldown;
             primCost = _cost1;
             secCost = _cost2;
         }

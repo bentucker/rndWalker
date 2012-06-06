@@ -59,6 +59,8 @@ namespace rndWalker.Bots {
         }
 
         override public void Execute() {
+            Game.OnDrawEvent += new DrawEventHandler(Game_OnDrawEvent);
+
             if ((uint)Me.LevelArea != 0x163FD || GetDistance(1991,2653)>10) {
                 if (Game.Ingame) {
                     ExitGame();
@@ -70,6 +72,9 @@ namespace rndWalker.Bots {
                     Thread.Sleep(5000);
                 }
             }
+
+            if (rndWalker.goldInit == 0)
+                rndWalker.goldInit = Me.Gold;
 
             Thread.Sleep(600);
 
@@ -104,6 +109,18 @@ namespace rndWalker.Bots {
             SnagIt.SnagItems();
             ExitGame();
             while (Game.Ingame) Thread.Sleep(383);
+        }
+
+        static void Game_OnDrawEvent(EventArgs e) {
+            int goldRate;
+            if (Game.Ingame)
+                rndWalker.goldEarned = Me.Gold - rndWalker.goldInit;
+            if (rndWalker.timeElapsed == 0)
+                goldRate = 0;
+            else
+                goldRate = (rndWalker.goldEarned * 3600 / rndWalker.timeElapsed);
+
+            Draw.DrawText(10.0f, 10.0f, 0x16A, 0x16, 0xFFFFFFFF, String.Format("Gold : {3}, GoldRate : {4}gph", rndWalker.goldEarned, goldRate));
         }
     }
 }

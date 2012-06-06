@@ -33,6 +33,9 @@ namespace rndWalker {
         private Thread thread;
         private Logger logger;
         private int gameCounter = 0;
+        public static int goldInit = 0;
+        public static int goldEarned = 0;
+        public static int timeElapsed = 0; // in seconds
         private Bot bot;
         private String botClass = "Sarkoth";
 
@@ -107,6 +110,7 @@ namespace rndWalker {
                 }
 
                 int diff = System.Environment.TickCount - start;
+                timeElapsed += diff / 1000;
 
                 Game.Print(string.Format("Run took {0} seconds. Total Runs: {1}", diff / 1000, (++gameCounter)));
                 Thread.Sleep(3000);
